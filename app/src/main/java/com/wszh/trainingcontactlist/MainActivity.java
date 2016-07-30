@@ -52,14 +52,11 @@ public class MainActivity extends AppCompatActivity {
                         ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME));
                 String number = cursor.getString(cursor.getColumnIndex(
                         ContactsContract.CommonDataKinds.Phone.NUMBER));
+                mContactsList.add(displayName + "\n" + number);
             }
         }catch(Exception e){
             e.printStackTrace();
             Log.i("Phone", "Phone 异常");
-        } finally {
-            if (cursor != null) {
-                cursor.close();
-            }
         }
 
 
